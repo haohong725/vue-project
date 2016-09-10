@@ -24,11 +24,11 @@
     </div>
 
     <div class="row" id="app-view-main">
-      <div class="col-md-2 main-side" @style="mainHeightStyle">
+      <div class="col-md-2 main-side" :style="mainHeightStyle">
         <ul class="nav nav-stacked nav-pills">
           <li class="divide" style="">Post</li>
-          <li><a v-link="{ path:'/post/list' }"><i class="iconfont icon-weibo"></i><span>Post List</span></a></li>
-          <li><a v-link="{ path:'/post/create' }"><i class="iconfont icon-plus"></i><span>Create Post</span></a></li>
+          <li><a v-link="{ path:'/posts/list' }"><i class="iconfont icon-weibo"></i><span>Post List</span></a></li>
+          <li><a v-link="{ path:'/posts/create' }"><i class="iconfont icon-plus"></i><span>Create Post</span></a></li>
 
         </ul>
       </div>
