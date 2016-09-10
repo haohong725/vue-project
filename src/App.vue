@@ -1,25 +1,42 @@
 <template>
-  <div id="app">
-    <img class="logo" src="./assets/logo.png">
-    <hello></hello>
-    <p>
-      Welcome to your Vue.js app!
-    </p>
-    <p>
-      To get a better understanding of how this boilerplate works, check out
-      <a href="http://vuejs-templates.github.io/webpack" target="_blank">its documentation</a>.
-      It is also recommended to go through the docs for
-      <a href="http://webpack.github.io/" target="_blank">Webpack</a> and
-      <a href="http://vuejs.github.io/vue-loader/" target="_blank">vue-loader</a>.
-      If you have any issues with the setup, please file an issue at this boilerplate's
-      <a href="https://github.com/vuejs-templates/webpack" target="_blank">repository</a>.
-    </p>
-    <p>
-      You may also want to checkout
-      <a href="https://github.com/vuejs/vue-router/" target="_blank">vue-router</a> for routing and
-      <a href="https://github.com/vuejs/vuex/" target="_blank">vuex</a> for state management.
-    </p>
-  </div>
+<div class="container-fluid">
+    <div class="row">
+      <header class="navbar" style="margin-bottom: 0">
+        <div class="navbar-header col-md-2">
+          <button aria-controls="bs-navbar" aria-expanded="false" class="collapsed navbar-toggle"
+                  data-target="#bs-navbar"
+                  data-toggle="collapse" type="button">
+            <span class="sr-only">Toggle navigation</span>
+            <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="iconfont icon-menu"></span>
+          </button>
+          <a href="../" class="navbar-brand" style="text-align:center;"><i
+            class="iconfont icon-logograph"></i>&nbsp;&nbsp;Dashboard</a></div>
+        <nav class="collapse navbar-collapse">
+          <ul class="nav navbar-nav">
+            <li><a v-link="{ path:'/' }" >首页</a></li>
+          </ul>
+          <ul class="nav navbar-nav navbar-right">
+            <li><a href="/login">你好</a></li>
+            <li><a href="/signup">退出</a></li>
+          </ul>
+        </nav>
+      </header>
+    </div>
+
+    <div class="row" id="app-view-main">
+      <div class="col-md-2 main-side" @style="mainHeightStyle">
+        <ul class="nav nav-stacked nav-pills">
+          <li class="divide" style="">Post</li>
+          <li><a v-link="{ path:'/post/list' }"><i class="iconfont icon-weibo"></i><span>Post List</span></a></li>
+          <li><a v-link="{ path:'/post/create' }"><i class="iconfont icon-plus"></i><span>Create Post</span></a></li>
+
+        </ul>
+      </div>
+      <div class="col-md-10 main-content">
+        <router-view></router-view>
+      </div>
+    </div>
+</div>
 </template>
 
 <script>
@@ -33,32 +50,5 @@ export default {
 </script>
 
 <style>
-html {
-  height: 100%;
-}
 
-body {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  height: 100%;
-}
-
-#app {
-  color: #2c3e50;
-  margin-top: -100px;
-  max-width: 600px;
-  font-family: Source Sans Pro, Helvetica, sans-serif;
-  text-align: center;
-}
-
-#app a {
-  color: #42b983;
-  text-decoration: none;
-}
-
-.logo {
-  width: 100px;
-  height: 100px
-}
 </style>
