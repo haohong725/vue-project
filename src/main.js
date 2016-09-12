@@ -38,7 +38,7 @@ router.map({
     component: require('./components/post/Detail')
   },
   '/posts/create': {
-    component: require('./components/post/Create')
+    component: require('./components/post/Detail')
   }
 })
 
