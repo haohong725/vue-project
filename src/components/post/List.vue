@@ -39,20 +39,20 @@
 	        	</tr>
         	</thead>
         	<tbody>
-    				<tr v-for="post in posts">
-    				  <td class="">{{ post.id }}</td>
-    				  <td class="">{{ post.userId }}</td>
-    				  <td class="">{{ post.slug }}</td>
-    				  <td class="">{{ post.type }}</td>
-    				  <td class="">{{ post.title }}</td>
-    				  <td class="">{{ post.up_votes }}</td>
-    				  <td class="">{{ post.down_votes }}</td>
-    				  <td class="">{{ post.created_at | date }}</td>
-    				  <td class="">{{ post.updated_at | date }}</td>
-              <td><a class="btn btn-primary" v-link="{path: '/posts/detail/'+post.id}">修改</a></td>
-    				</tr>
-    			</tbody>
-    		</table>
+                <tr v-for="post in posts">
+                    <td class="">{{ post.id }}</td>
+                    <td class="">{{ post.userId }}</td>
+                    <td class="">{{ post.slug }}</td>
+                    <td class="">{{ post.type }}</td>
+                    <td class="">{{ post.title }}</td>
+                    <td class="">{{ post.up_votes }}</td>
+                    <td class="">{{ post.down_votes }}</td>
+                    <td class="">{{ post.created_at | date }}</td>
+                    <td class="">{{ post.updated_at | date }}</td>
+                    <td><a class="btn btn-primary" v-link="{path: '/posts/detail/'+post.id}">修改</a></td>
+                </tr>
+            </tbody>
+        </table>
         <nav>
           <ul class="pagination">
             <li><a href="#">上页</a></li>
@@ -73,8 +73,8 @@
     ready () {
       let self = this
       this.$http.get('http://support.moque.dev/admin/posts').then(function (response) {
-        console.log(response.data.data)
-        self.posts = response.data.data
+        console.log(response.body.data)
+        self.posts = response.body.data
       })
     },
     data () {
