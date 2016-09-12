@@ -25,16 +25,6 @@
     </div>
 
     <div class="form-group">
-      <label>up_votes</label>
-      <input class="form-control" name="post.up_votes" type="text" v-model="post.up_votes" placeholder="" /><br/>
-    </div>
-
-    <div class="form-group">
-      <label>down_votes</label>
-      <input class="form-control" name="post.down_votes" type="text" v-model="post.down_votes" placeholder="" /><br/>
-    </div>
-
-    <div class="form-group">
       <label >Code Type</label>
       <select v-model="post.text.code_type" class="form-control">
         <option value="text">text</option>

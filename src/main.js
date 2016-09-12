@@ -36,6 +36,9 @@ router.map({
   '/posts/detail/:post_id': {
     name: 'posts',
     component: require('./components/post/Detail')
+  },
+  '/posts/create': {
+    component: require('./components/post/Create')
   }
 })
 
