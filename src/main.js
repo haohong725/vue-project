@@ -41,12 +41,13 @@ router.map({
     component: require('./components/post/Detail')
   },
 
-  // '/category/create': {
-  //   component: require('./components/category/Detail')
-  // },
-  // '/category/detail/:category_id': {
-  //   component: require('./components/category/Detail')
-  // },
+  '/category/create': {
+    component: require('./components/category/Detail')
+  },
+  '/category/detail/:category_id': {
+    name: 'category.detail',
+    component: require('./components/category/Detail')
+  },
   '/category/list': {
     component: require('./components/category/List')
   }

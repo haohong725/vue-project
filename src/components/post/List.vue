@@ -1,6 +1,6 @@
 <template>
   <h1>
-    我的短址
+    文章列表
     <a class="btn btn-primary pull-right" v-link="{path:'/posts/create'}"><i class="iconfont icon-plus"></i>Create Post</a>
   </h1>
   <div class="panel panel-default">

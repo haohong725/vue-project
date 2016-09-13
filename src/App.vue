@@ -33,7 +33,7 @@
         <ul class="nav nav-stacked nav-pills">
           <li class="divide" style="">Category</li>
           <li><a v-link="{ path:'/category/list' }"><i class="iconfont icon-weibo"></i><span>Category List</span></a></li>
-          <li><a v-link="{ path:'/category/create' }"><i class="iconfont icon-plus"></i><span>Category Post</span></a></li>
+          <li><a v-link="{ path:'/category/create' }"><i class="iconfont icon-plus"></i><span>Create Category</span></a></li>
         </ul>
       </div>
       <div class="col-md-10 main-content">
