@@ -39,6 +39,16 @@ router.map({
   },
   '/posts/create': {
     component: require('./components/post/Detail')
+  },
+
+  // '/category/create': {
+  //   component: require('./components/category/Detail')
+  // },
+  // '/category/detail/:category_id': {
+  //   component: require('./components/category/Detail')
+  // },
+  '/category/list': {
+    component: require('./components/category/List')
   }
 })
 
