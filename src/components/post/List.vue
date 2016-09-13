@@ -41,7 +41,7 @@
         	<tbody>
                 <tr v-for="post in posts">
                     <td class="">{{ post.id }}</td>
-                    <td class="">{{ post.userId }}</td>
+                    <td class="">{{ post.user_id }}</td>
                     <td class="">{{ post.slug }}</td>
                     <td class="">{{ post.type }}</td>
                     <td class="">{{ post.title }}</td>
@@ -55,8 +55,8 @@
         </table>
         <nav>
           <ul class="pagination">
-            <li><a href="#">上页</a></li>
-            <li><a href="#">下页</a></li>
+            <li><button type="button" class="btn btn-default" v-on:click="prev" v-if="prev_page_url">上页</button></li>
+            <li><button type="button" class="btn btn-default" v-on:click="next" v-if="next_page_url">下页</button></li>
           </ul>
         </nav>
       </div>
@@ -71,11 +71,8 @@
 <script>
   export default {
     ready () {
-      let self = this
-      this.$http.get('http://support.moque.dev/admin/posts').then(function (response) {
-        console.log(response.body.data)
-        self.posts = response.body.data
-      })
+      var url = 'http://support.moque.dev/admin/posts'
+      this.refresh(url)
     },
     data () {
       return {
@@ -83,6 +80,32 @@
         next_page_url: '',
         posts: [],
         message: 'test message'
+      }
+    },
+    methods: {
+      refresh (url) {
+        let self = this
+        this.$http.get(url).then(function (response) {
+          console.log(response.body)
+          self.posts = response.body.data
+
+          this.prev_page_url = response.body.prev_page_url
+          this.next_page_url = response.body.next_page_url
+        })
+      },
+      prev () {
+        if (this.prev_page_url) {
+          this.refresh(this.prev_page_url)
+        } else {
+          window.alert('没有上一页了')
+        }
+      },
+      next () {
+        if (this.next_page_url) {
+          this.refresh(this.next_page_url)
+        } else {
+          window.alert('没有下一页了')
+        }
       }
     }
   }
