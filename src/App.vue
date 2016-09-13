@@ -27,12 +27,12 @@
       <div class="col-md-2 main-side" :style="mainHeightStyle">
         <ul class="nav nav-stacked nav-pills">
           <li class="divide" style="">Post</li>
-          <li><a v-link="{ path:'/posts/list' }"><i class="iconfont icon-weibo"></i><span>Post List</span></a></li>
+          <li><a v-link="{ path:'/posts/list' }"><i class="iconfont icon-menu"></i><span>Post List</span></a></li>
           <li><a v-link="{ path:'/posts/create' }"><i class="iconfont icon-plus"></i><span>Create Post</span></a></li>
         </ul>
         <ul class="nav nav-stacked nav-pills">
           <li class="divide" style="">Category</li>
-          <li><a v-link="{ path:'/category/list' }"><i class="iconfont icon-weibo"></i><span>Category List</span></a></li>
+          <li><a v-link="{ path:'/category/list' }"><i class="iconfont icon-menu"></i><span>Category List</span></a></li>
           <li><a v-link="{ path:'/category/create' }"><i class="iconfont icon-plus"></i><span>Create Category</span></a></li>
         </ul>
       </div>
